@@ -74,6 +74,7 @@ extraReducers: {
     [LoginUser.fulfilled]: (state, { payload }) => {
     const { user } = payload;
     state.isLoading = false;
+    state.user = user;
     addUserToLocalStorage(user);
     toast.success(`Welcome Back ${user.name}`);
     },
